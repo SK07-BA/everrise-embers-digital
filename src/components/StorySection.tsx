@@ -1,11 +1,33 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
+import wheatEmbers from "@/assets/wheat-embers.png";
 
 const StorySection = () => {
   return (
     <section id="story" className="relative py-32 bg-background overflow-hidden">
       {/* Subtle ambient glow */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px]" />
+      {/* Decorative wheat */}
+      <motion.img
+        src={wheatEmbers}
+        alt=""
+        loading="lazy"
+        width={512}
+        height={512}
+        className="absolute -right-16 top-10 w-[200px] opacity-20 rotate-12"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.img
+        src={wheatEmbers}
+        alt=""
+        loading="lazy"
+        width={512}
+        height={512}
+        className="absolute -left-16 bottom-10 w-[180px] opacity-15 -rotate-12 scale-x-[-1]"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
