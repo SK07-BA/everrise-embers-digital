@@ -2,12 +2,15 @@ import logo from "@/assets/logo.png";
 
 const FooterSection = () => {
   return (
-    <footer id="contact" className="border-t border-border/50 py-16 bg-background">
+    <footer id="contact" className="border-t border-border py-16 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center gap-6">
+          {/* Divider */}
+          <div className="divider-gold w-24 mb-2" />
+
           <img src={logo} alt="EverRise & Embers" className="h-16 w-16 object-contain" />
-          <p className="font-display text-2xl font-semibold text-primary">
-            EverRise & Embers
+          <p className="font-display text-2xl font-semibold text-foreground">
+            EverRise <span className="text-primary">&</span> Embers
           </p>
           <p className="font-body text-muted-foreground text-sm">
             Eggless Bakery · Baked with Soul · Since 2024

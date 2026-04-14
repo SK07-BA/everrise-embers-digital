@@ -62,11 +62,14 @@ const menuItems = [
 const FeaturedSection = () => {
   return (
     <section id="menu" className="relative py-32 bg-background">
-      {/* Decorative wheat accent */}
+      {/* Decorative accents */}
       <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/5 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-ember/5 blur-[100px] rounded-full" />
 
       <div className="container mx-auto px-6">
+        {/* Divider */}
+        <div className="divider-gold mb-16 max-w-xs mx-auto" />
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +77,7 @@ const FeaturedSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-primary/80 font-body text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
             From the Oven · 100% Eggless
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">

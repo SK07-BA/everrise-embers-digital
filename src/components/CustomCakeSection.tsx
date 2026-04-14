@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const flavors = [
-  "Chocolate", "Vanilla", "Red Velvet", "Butterscotch", 
+  "Chocolate", "Vanilla", "Red Velvet", "Butterscotch",
   "Pineapple", "Strawberry", "Black Forest", "Mango",
   "Coffee Mocha", "Blueberry", "Oreo", "Caramel"
 ];
@@ -29,9 +29,11 @@ const CustomCakeSection = () => {
     <section id="custom" className="relative py-32 bg-background overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[150px]" />
-      <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] rounded-full bg-ember/5 blur-[120px]" />
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* Divider */}
+        <div className="divider-gold mb-16 max-w-xs mx-auto" />
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +41,7 @@ const CustomCakeSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-primary/80 font-body text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
             Your Vision, Our Craft · 100% Eggless
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -69,8 +71,8 @@ const CustomCakeSection = () => {
                   onClick={() => toggleFlavor(flavor)}
                   className={`px-4 py-2 rounded-full font-body text-sm transition-all duration-300 border ${
                     selected.includes(flavor)
-                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(36_80%_55%/0.3)]"
-                      : "glass border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30"
+                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(38_65%_45%/0.2)]"
+                      : "glass border-border text-muted-foreground hover:text-foreground hover:border-primary/40"
                   }`}
                 >
                   {flavor}
@@ -96,7 +98,7 @@ const CustomCakeSection = () => {
                 value={occasion}
                 onChange={(e) => setOccasion(e.target.value)}
                 placeholder="Birthday, Anniversary, etc."
-                className="w-full glass rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 border border-border/50 focus:border-primary/50 focus:outline-none transition-colors"
+                className="w-full glass rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 border border-border focus:border-primary/50 focus:outline-none transition-colors"
               />
             </div>
             <div>
@@ -108,7 +110,7 @@ const CustomCakeSection = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Happy Birthday, Sarah!"
-                className="w-full glass rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 border border-border/50 focus:border-primary/50 focus:outline-none transition-colors"
+                className="w-full glass rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 border border-border focus:border-primary/50 focus:outline-none transition-colors"
               />
             </div>
           </motion.div>
