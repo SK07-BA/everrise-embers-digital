@@ -8,21 +8,17 @@ const flavors = [
 ];
 
 const CustomCakeSection = () => {
-  const [selected, setSelected] = useState<string[]>([]);
+  const [selectedFlavor, setSelectedFlavor] = useState<string | null>(null);
   const [occasion, setOccasion] = useState("");
   const [message, setMessage] = useState("");
   const [specialRequest, setSpecialRequest] = useState("");
 
-  const toggleFlavor = (flavor: string) => {
-    setSelected((prev) =>
-      prev.includes(flavor)
-        ? prev.filter((f) => f !== flavor)
-        : [...prev, flavor]
-    );
+  const selectFlavor = (flavor: string) => {
+    setSelectedFlavor((prev) => (prev === flavor ? null : flavor));
   };
 
   const handleOrder = () => {
-    const text = `Hi! I'd like to order a custom eggless cake%0A%0AFlavors: ${selected.join(", ") || "Not specified"}%0AOccasion: ${occasion || "Not specified"}%0AMessage on cake: ${message || "None"}%0ASpecial requests: ${specialRequest || "None"}`;
+    const text = `Hi! I'd like to order a custom eggless cake%0A%0AFlavour: ${selectedFlavor || "Not specified"}%0AOccasion: ${occasion || "Not specified"}%0AMessage on cake: ${message || "None"}%0ASpecial requests: ${specialRequest || "None"}`;
     window.open(`https://wa.me/14375560542?text=${text}`, "_blank");
   };
 
@@ -60,16 +56,20 @@ const CustomCakeSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-8"
           >
-            <h3 className="font-display text-xl font-semibold text-foreground mb-4 text-center">
-              Pick Your Flavours
+            <h3 className="font-display text-xl font-semibold text-foreground mb-2 text-center">
+              Pick Your Flavour
             </h3>
+            <p className="font-body text-sm text-muted-foreground text-center mb-4">
+              Choose one flavour for your cake.
+            </p>
             <div className="flex flex-wrap justify-center gap-3">
               {flavors.map((flavor) => (
                 <button
                   key={flavor}
-                  onClick={() => toggleFlavor(flavor)}
+                  type="button"
+                  onClick={() => selectFlavor(flavor)}
                   className={`px-4 py-2 rounded-full font-body text-sm transition-all duration-300 border ${
-                    selected.includes(flavor)
+                    selectedFlavor === flavor
                       ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(38_65%_45%/0.2)]"
                       : "glass border-border text-muted-foreground hover:text-foreground hover:border-primary/40"
                   }`}
