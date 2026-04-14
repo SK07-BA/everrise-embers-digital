@@ -85,20 +85,17 @@ const StorySection = () => {
               className="mt-10 grid grid-cols-3 gap-4"
             >
               {[
-                { label: "100% Eggless" },
-                { label: "Fire-Baked" },
-                { label: "Made with Love" },
+                { value: "50+", label: "Signature Items" },
+                { value: "6", label: "Years of Craft" },
+                { value: "∞", label: "Happy Customers" },
               ].map((item) => (
-                <div key={item.label} className="glass rounded-xl p-4 text-center">
-                  <img
-                    src={abcImage}
-                    alt={item.label}
-                    loading="lazy"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 mx-auto mb-2 object-contain"
-                  />
-                  <p className="font-body text-xs text-primary font-medium tracking-wide">{item.label}</p>
+                <div key={item.label} className="glass rounded-xl py-6 px-4 text-center">
+                  <p className="font-display text-3xl md:text-4xl font-bold text-accent mb-1">
+                    {item.value}
+                  </p>
+                  <p className="font-body text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
+                    {item.label}
+                  </p>
                 </div>
               ))}
             </motion.div>
