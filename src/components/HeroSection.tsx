@@ -37,16 +37,18 @@ const HeroSection = () => {
             <span className="text-foreground italic">Embers</span>
           </h1>
 
-          {/* Eggless USP badge */}
+          {/* Eggless USP — elegant typographic strip */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 0.5 }}
-            className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8"
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: "auto" }}
+            transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
+            className="inline-flex items-center gap-4 my-8 overflow-hidden"
           >
-            <span className="text-lg">🥚</span>
-            <span className="font-body text-sm font-medium text-primary tracking-wide">100% Eggless Bakery</span>
-            <span className="text-lg">✨</span>
+            <span className="h-px w-8 bg-primary/40" />
+            <span className="font-display text-lg md:text-xl tracking-[0.15em] uppercase text-primary font-semibold">
+              100% Eggless Bakery
+            </span>
+            <span className="h-px w-8 bg-primary/40" />
           </motion.div>
 
           <p className="font-body text-muted-foreground text-lg md:text-xl max-w-md mx-auto lg:mx-0 mb-10 leading-relaxed">
@@ -55,7 +57,7 @@ const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <motion.a
-              href="https://wa.me/YOUR_NUMBER"
+              href="https://wa.me/14375560542"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
@@ -66,7 +68,7 @@ const HeroSection = () => {
               Order on WhatsApp
             </motion.a>
             <motion.a
-              href="https://instagram.com/YOUR_HANDLE"
+              href="https://www.instagram.com/eggless2026?utm_source=qr&igsh=ZDlpcHptOGhrZmZl"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
