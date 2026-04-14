@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
-import abcImage from "@/assets/abc.png";
 import wheatEmbers from "@/assets/wheat-embers.png";
 
 const StorySection = () => {
