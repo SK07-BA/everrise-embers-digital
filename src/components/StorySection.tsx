@@ -14,7 +14,7 @@ const StorySection = () => {
         loading="lazy"
         width={512}
         height={512}
-        className="absolute -right-16 top-10 w-[200px] opacity-20 rotate-12"
+        className="absolute -right-16 top-10 w-[200px] opacity-15 rotate-12"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -24,12 +24,15 @@ const StorySection = () => {
         loading="lazy"
         width={512}
         height={512}
-        className="absolute -left-16 bottom-10 w-[180px] opacity-15 -rotate-12 scale-x-[-1]"
+        className="absolute -left-16 bottom-10 w-[180px] opacity-10 -rotate-12 scale-x-[-1]"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* Divider */}
+        <div className="divider-gold mb-16 max-w-xs mx-auto" />
+
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           {/* Logo / Visual side */}
           <motion.div
@@ -40,7 +43,7 @@ const StorySection = () => {
             className="flex items-center justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full" />
+              <div className="absolute inset-0 bg-primary/8 blur-[80px] rounded-full" />
               <img
                 src={logo}
                 alt="EverRise & Embers - Eggless Bakery"
@@ -56,7 +59,7 @@ const StorySection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-primary/80 font-body text-sm tracking-[0.3em] uppercase mb-4">
+            <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
               Our Story
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">

@@ -5,10 +5,10 @@ import EmberParticles from "./EmberParticles";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Ambient glow */}
+      {/* Soft ambient glow */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-ember/5 blur-[150px]" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[150px]" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-ember/5 blur-[120px]" />
       </div>
 
       <EmberParticles />
@@ -25,7 +25,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-primary/80 font-body text-sm tracking-[0.3em] uppercase mb-6"
+            className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-6"
           >
             Artisan Baked · Small Batch · Soul Warmed
           </motion.p>
@@ -33,7 +33,7 @@ const HeroSection = () => {
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight mb-4">
             <span className="text-foreground">EverRise</span>
             <br />
-            <span className="text-primary">&</span>{" "}
+            <span className="text-gold-shimmer">&</span>{" "}
             <span className="text-foreground italic">Embers</span>
           </h1>
 
@@ -71,7 +71,7 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="px-8 py-4 rounded-full font-body font-medium glass text-foreground hover:border-primary/30 transition-all duration-300 text-base flex items-center justify-center gap-2"
+              className="px-8 py-4 rounded-full font-body font-medium glass text-foreground hover:border-primary/50 transition-all duration-300 text-base flex items-center justify-center gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               Order on Instagram
@@ -86,13 +86,13 @@ const HeroSection = () => {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           className="flex-1 relative flex items-center justify-center"
         >
-          <div className="absolute w-[500px] h-[500px] rounded-full bg-ember/10 blur-[100px]" />
+          <div className="absolute w-[500px] h-[500px] rounded-full bg-primary/8 blur-[100px]" />
           <motion.img
             src={heroCookie}
             alt="Artisanal eggless chocolate chip cookie with melting chocolate and sea salt"
             width={1024}
             height={1024}
-            className="relative z-10 w-[400px] md:w-[500px] lg:w-[580px] drop-shadow-[0_20px_60px_rgba(217,153,45,0.3)]"
+            className="relative z-10 w-[400px] md:w-[500px] lg:w-[580px] drop-shadow-[0_20px_60px_rgba(160,120,40,0.2)]"
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
