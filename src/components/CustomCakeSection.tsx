@@ -11,6 +11,7 @@ const CustomCakeSection = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [occasion, setOccasion] = useState("");
   const [message, setMessage] = useState("");
+  const [specialRequest, setSpecialRequest] = useState("");
 
   const toggleFlavor = (flavor: string) => {
     setSelected((prev) =>
@@ -21,17 +22,15 @@ const CustomCakeSection = () => {
   };
 
   const handleOrder = () => {
-    const text = `Hi! I'd like to order a custom eggless cake 🎂%0A%0AFlavors: ${selected.join(", ") || "Not specified"}%0AOccasion: ${occasion || "Not specified"}%0AMessage on cake: ${message || "None"}`;
-    window.open(`https://wa.me/YOUR_NUMBER?text=${text}`, "_blank");
+    const text = `Hi! I'd like to order a custom eggless cake%0A%0AFlavors: ${selected.join(", ") || "Not specified"}%0AOccasion: ${occasion || "Not specified"}%0AMessage on cake: ${message || "None"}%0ASpecial requests: ${specialRequest || "None"}`;
+    window.open(`https://wa.me/14375560542?text=${text}`, "_blank");
   };
 
   return (
     <section id="custom" className="relative py-32 bg-background overflow-hidden">
-      {/* Ambient glow */}
       <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[150px]" />
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Divider */}
         <div className="divider-gold mb-16 max-w-xs mx-auto" />
 
         <motion.div
@@ -42,13 +41,13 @@ const CustomCakeSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-            Your Vision, Our Craft · 100% Eggless
+            Your Vision, Our Craft -- 100% Eggless
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             Custom Cakes
           </h2>
           <p className="font-body text-muted-foreground max-w-lg mx-auto">
-            Tell us your dream cake — any flavour, any occasion. We'll bake it completely eggless, with the same love and perfection.
+            Tell us your dream cake -- any flavour, any occasion. We'll bake it completely eggless, with the same love and perfection.
           </p>
         </motion.div>
 
@@ -87,7 +86,7 @@ const CustomCakeSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid sm:grid-cols-2 gap-4 mb-8"
+            className="grid sm:grid-cols-2 gap-4 mb-4"
           >
             <div>
               <label className="font-body text-sm text-muted-foreground mb-2 block">
@@ -113,6 +112,26 @@ const CustomCakeSection = () => {
                 className="w-full glass rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 border border-border focus:border-primary/50 focus:outline-none transition-colors"
               />
             </div>
+          </motion.div>
+
+          {/* Special Requests */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mb-8"
+          >
+            <label className="font-body text-sm text-muted-foreground mb-2 block">
+              Special Requests or Custom Flavour Ideas
+            </label>
+            <textarea
+              value={specialRequest}
+              onChange={(e) => setSpecialRequest(e.target.value)}
+              placeholder="Tell us about any specific flavours, dietary needs, design ideas, or anything else you'd like..."
+              rows={3}
+              className="w-full glass rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 border border-border focus:border-primary/50 focus:outline-none transition-colors resize-none"
+            />
           </motion.div>
 
           {/* CTA */}

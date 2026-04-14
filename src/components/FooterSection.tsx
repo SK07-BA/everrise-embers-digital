@@ -5,21 +5,18 @@ const FooterSection = () => {
     <footer id="contact" className="border-t border-border py-16 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center gap-6">
-          {/* Divider */}
           <div className="divider-gold w-24 mb-2" />
-
           <img src={logo} alt="EverRise & Embers" className="h-16 w-16 object-contain" />
           <p className="font-display text-2xl font-semibold text-foreground">
             EverRise <span className="text-primary">&</span> Embers
           </p>
           <p className="font-body text-muted-foreground text-sm">
-            Eggless Bakery · Baked with Soul · Since 2024
+            Eggless Bakery -- Baked with Soul -- Since 2024
           </p>
 
-          {/* Social links */}
           <div className="flex items-center gap-6 mt-2">
             <a
-              href="https://wa.me/YOUR_NUMBER"
+              href="https://wa.me/14375560542"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 font-body text-sm"
@@ -28,7 +25,7 @@ const FooterSection = () => {
               WhatsApp
             </a>
             <a
-              href="https://instagram.com/YOUR_HANDLE"
+              href="https://www.instagram.com/eggless2026?utm_source=qr&igsh=ZDlpcHptOGhrZmZl"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 font-body text-sm"

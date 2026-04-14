@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
+import abcImage from "@/assets/abc.png";
 import wheatEmbers from "@/assets/wheat-embers.png";
 
 const StorySection = () => {
   return (
     <section id="story" className="relative py-32 bg-background overflow-hidden">
-      {/* Subtle ambient glow */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px]" />
-      {/* Decorative wheat */}
       <motion.img
         src={wheatEmbers}
         alt=""
@@ -30,7 +29,6 @@ const StorySection = () => {
       />
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Divider */}
         <div className="divider-gold mb-16 max-w-xs mx-auto" />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
@@ -79,7 +77,7 @@ const StorySection = () => {
               </p>
             </div>
 
-            {/* Eggless highlight */}
+            {/* Brand highlights with abc image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -88,12 +86,19 @@ const StorySection = () => {
               className="mt-10 grid grid-cols-3 gap-4"
             >
               {[
-                { icon: "🥚", label: "100% Eggless" },
-                { icon: "🔥", label: "Fire-Baked" },
-                { icon: "❤️", label: "Made with Love" },
+                { label: "100% Eggless" },
+                { label: "Fire-Baked" },
+                { label: "Made with Love" },
               ].map((item) => (
                 <div key={item.label} className="glass rounded-xl p-4 text-center">
-                  <div className="text-2xl mb-2">{item.icon}</div>
+                  <img
+                    src={abcImage}
+                    alt={item.label}
+                    loading="lazy"
+                    width={64}
+                    height={64}
+                    className="w-10 h-10 mx-auto mb-2 object-contain"
+                  />
                   <p className="font-body text-xs text-primary font-medium tracking-wide">{item.label}</p>
                 </div>
               ))}
