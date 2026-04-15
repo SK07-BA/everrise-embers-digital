@@ -9,6 +9,7 @@ import imgCroissants from "@/assets/menu-croissants.jpg";
 import imgPretzels from "@/assets/menu-pretzels.jpg";
 import imgCupcakes from "@/assets/menu-cupcakes.jpg";
 import imgBrownies from "@/assets/menu-brownies.jpg";
+import imgMousseCupCake from "@/assets/menu-mousse-cake-cup.jpg";
 
 type Category = "All" | "Cookies" | "Pastries" | "Breads" | "Sweets";
 
@@ -16,6 +17,7 @@ interface MenuItem {
   title: string;
   desc: string;
   price: string;
+  flavor?: string;
   qty: string;
   image: string;
   category: Category;
@@ -74,14 +76,25 @@ const menuItems: MenuItem[] = [
     title: "Cupcakes",
     desc: "Fluffy eggless cupcakes with artisan frosting",
     price: "Custom",
+    flavor: "Custom",
     qty: "Ask us",
     image: imgCupcakes,
+    category: "Sweets",
+  },
+  {
+    title: "Mousse Cup Cake",
+    desc: "Light mousse layered eggless cup cake with a custom finish",
+    price: "Custom",
+    flavor: "Custom",
+    qty: "Ask us",
+    image: imgMousseCupCake,
     category: "Sweets",
   },
   {
     title: "Brownies",
     desc: "Fudgy, dense, eggless chocolate brownies",
     price: "Custom",
+    flavor: "Custom",
     qty: "Ask us",
     image: imgBrownies,
     category: "Sweets",
@@ -175,13 +188,20 @@ const FeaturedSection = () => {
                   <p className="font-body text-muted-foreground text-xs mb-3 leading-relaxed">
                     {item.desc}
                   </p>
-                  <div className="flex items-baseline justify-between">
-                    <p className="font-display text-xl font-bold text-primary">
-                      {item.price}
-                    </p>
-                    <p className="font-body text-muted-foreground text-xs">
-                      {item.qty}
-                    </p>
+                  <div className="space-y-1.5">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <p className="font-display text-xl font-bold text-primary">
+                        {item.price}
+                      </p>
+                      <p className="font-body text-muted-foreground text-xs">
+                        {item.qty}
+                      </p>
+                    </div>
+                    {item.flavor && (
+                      <p className="font-body text-muted-foreground text-xs">
+                        Flavor: {item.flavor}
+                      </p>
+                    )}
                   </div>
                 </div>
               </motion.div>

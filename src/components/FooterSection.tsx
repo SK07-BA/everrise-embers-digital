@@ -6,12 +6,12 @@ const FooterSection = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center gap-6">
           <div className="divider-gold w-24 mb-2" />
-          <img src={logo} alt="EverRise & Embers" className="h-16 w-16 object-contain" />
+          <img src={logo} alt="EverRise & Embers" className="h-[7.45rem] w-auto object-contain" />
           <p className="font-display text-2xl font-semibold text-foreground">
             EverRise <span className="text-primary">&</span> Embers
           </p>
           <p className="font-body text-muted-foreground text-sm">
-            Eggless Bakery -- Baked with Soul -- Since 2024
+            Eggless Bakery -- Baked with Soul -- Since 2026
           </p>
 
           <div className="flex items-center gap-6 mt-2">
