@@ -67,7 +67,7 @@ const Navbar = () => {
           <motion.img
             src={logo}
             alt="EverRise & Embers logo"
-            className="h-10 w-10 object-contain"
+            className="h-10 md:h-12 w-auto object-contain"
             whileHover={{ rotate: 10 }}
             transition={{ type: "spring", stiffness: 300 }}
           />
