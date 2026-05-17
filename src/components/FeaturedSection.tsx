@@ -10,6 +10,7 @@ import imgPretzels from "@/assets/menu-pretzels.jpg";
 import imgCupcakes from "@/assets/menu-cupcakes.jpg";
 import imgBrownies from "@/assets/menu-brownies.jpg";
 import imgMousseCupCake from "@/assets/menu-mousse-cake-cup.jpg";
+import cheeseCake from "@/assets/cheesecake.png"
 
 type Category = "All" | "Cookies" | "Pastries" | "Breads" | "Sweets";
 
@@ -82,21 +83,30 @@ const menuItems: MenuItem[] = [
     category: "Sweets",
   },
   {
-    title: "Mousse Cup Cake",
-    desc: "Light mousse layered eggless cup cake with a custom finish",
-    price: "Custom",
+    title: "Mousse Cupcake",
+    desc: "Light, layered eggless mousse cupcake with a custom finish",
+    price: "$5",
     flavor: "Custom",
-    qty: "Ask us",
+    qty: "Single serving",
     image: imgMousseCupCake,
     category: "Sweets",
   },
   {
     title: "Brownies",
     desc: "Fudgy, dense, eggless chocolate brownies",
-    price: "Custom",
-    flavor: "Custom",
-    qty: "Ask us",
+    price: "$5",
+    flavor: "Walnut, Chocolate Chips",
+    qty: "1 piece",
     image: imgBrownies,
+    category: "Sweets",
+  },
+    {
+    title: "Cheesecake",
+    desc: "Rich, creamy eggless cheesecake available in Mango, Blueberry, Chocolate & Biscoff",
+    price: "$8",
+    flavor: "Mango, Blueberry, Chocolate, Biscoff",
+    qty: "1 cheesecake cup",
+    image: cheeseCake,
     category: "Sweets",
   },
 ];
